@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        foods.getfoods().sort()
         
     }
+//viewが表示される直前に呼ばれる、表示系ライフサイクルメソッド
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         table.reloadData()
@@ -37,6 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //リスト内のCellを下記定数で取得し、返したものをCellとして表示(アンラップ？)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ListCell
+        //セクション表示用
         
        
         //cellテキスト左側
@@ -46,6 +48,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        cell.detailTextLabel?.text = "test"
         cell.RightCellLabel?.text = String(foods.getfoods()[indexPath.row].number)
         return cell
+    }
+//セクション表示(空配列ではできない？　fatal error:Index out of range)
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        foods.indexMake()[section]
+//    }
+    //IndexBar設定
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        foods.indexMake()
+    }
+    
+    //タッチされた箇所のIndexPathが入りタップした先に移動する
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        self.table.scrollToRow(at: [0,index], at: .top, animated: true)
+        return index
     }
 }
 

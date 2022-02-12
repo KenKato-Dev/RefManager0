@@ -23,6 +23,11 @@ class FoodService{
     
     private var foods:[Food] = []
     
+//    subscript(index:Int)->String{
+//        return "foods.startIndex"
+//    }
+
+    
     
     func add(_ food:Food){
         foods.append(food)
@@ -32,6 +37,7 @@ class FoodService{
     func getfoods() -> [Food] {
         foods
     }
+    //Sort用FUNC
     func sort(){
         do{
             try foods.sort(by: { lhs, rhs in
@@ -41,5 +47,13 @@ class FoodService{
         }catch{
 //            fatalError()
         }
+    }
+    func indexMake() -> [String]{
+        var headText:[String]=[]
+        for item in foods{
+
+            headText.append(String(item.name.first!))
+        }
+        return headText
     }
 }
