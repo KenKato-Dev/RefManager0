@@ -41,6 +41,7 @@ class ModalViewController: UIViewController,UITextFieldDelegate {
      func addToList(){
          let newFood = Food.init(name: leftTextField.text!, number:Int(rightTextField.text!)!)
          FoodService.shared.add(newFood)
+
 //         ViewController().table.reloadData()
          
     }

@@ -10,6 +10,7 @@ import UIKit
 
 struct Food{
 //    let nameAndNumber:(name:String, number:Int)
+    //ボタンの追加によりここ
     let name:String
     let number:Int
 }

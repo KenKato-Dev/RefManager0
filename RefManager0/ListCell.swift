@@ -13,13 +13,20 @@ class ListCell: UITableViewCell {
     
     @IBOutlet weak var LeftCellLabel :UILabel!
     @IBOutlet weak var RightCellLabel:UILabel!
-//    static var nib: UINib {
+    @IBOutlet weak var box: CheckBoxButton!
+    
+
+    
+    //    static var nib: UINib {
 //            return UINib(nibName: "ListCell.swift", bundle: nil)
 //        }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code　ここに初期値を設定、ViewControllerで実装せず余計なものを入れないことで自動でボタンが各Cellに入る
+        //ボタンのアクション
+        
+        box.addTarget(self, action: #selector(selectBox(_:)), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,5 +34,31 @@ class ListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @objc func selectBox(_ sender: UIButton) {
 
+        box.toggle()
+        var boxClick = 0
+        if box.isCheck == false {
+            box.setImage(box.emptyBox, for: .normal)
+            boxClick += 1
+            print("□です")
+        }else{
+            box.setImage(box.checkedBox, for: .normal)
+            boxClick += 1
+            print("☑︎です")
+        }
+        
+        print("\(box.tag+1)番目のボタンが\(boxClick)回押されました")
+
+    }
+    func appearSelectButton(){
+        var sharedRemove = RemoveButton.isPushed
+        if sharedRemove == true{
+            box.isHidden = false
+            print("test")
+        }else{
+            box.isHidden = true
+            print("test")
+        }
+    }
 }

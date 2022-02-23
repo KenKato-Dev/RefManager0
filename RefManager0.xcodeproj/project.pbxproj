@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC1CE65927C49CC400EDC066 /* RemoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CE65827C49CC400EDC066 /* RemoveButton.swift */; };
+		EC7C017427B8EE9E00487A60 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7C017327B8EE9E00487A60 /* CheckBoxButton.swift */; };
 		EC7E1F7F2798389D00E3F49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E1F7E2798389D00E3F49A /* AppDelegate.swift */; };
 		EC7E1F812798389D00E3F49A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E1F802798389D00E3F49A /* SceneDelegate.swift */; };
 		EC7E1F832798389D00E3F49A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E1F822798389D00E3F49A /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC1CE65827C49CC400EDC066 /* RemoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveButton.swift; sourceTree = "<group>"; };
+		EC7C017327B8EE9E00487A60 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		EC7E1F7B2798389D00E3F49A /* RefManager0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefManager0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7E1F7E2798389D00E3F49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC7E1F802798389D00E3F49A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 				EC7E1F822798389D00E3F49A /* ViewController.swift */,
 				EC7E1F92279BAF4000E3F49A /* ModalViewController.swift */,
 				ECA23A8427A3B5E10063C9D4 /* ListCell.swift */,
+				EC7C017327B8EE9E00487A60 /* CheckBoxButton.swift */,
+				EC1CE65827C49CC400EDC066 /* RemoveButton.swift */,
 				EC7E1F842798389D00E3F49A /* Main.storyboard */,
 				EC7E1F872798389F00E3F49A /* Assets.xcassets */,
 				EC7E1F892798389F00E3F49A /* LaunchScreen.storyboard */,
@@ -150,9 +156,11 @@
 				EC7E1F93279BAF4000E3F49A /* ModalViewController.swift in Sources */,
 				EC7E1F832798389D00E3F49A /* ViewController.swift in Sources */,
 				EC7E1F7F2798389D00E3F49A /* AppDelegate.swift in Sources */,
+				EC7C017427B8EE9E00487A60 /* CheckBoxButton.swift in Sources */,
 				ECA23A8527A3B5E10063C9D4 /* ListCell.swift in Sources */,
 				EC7E1F812798389D00E3F49A /* SceneDelegate.swift in Sources */,
 				ECA23A7F279D799E0063C9D4 /* FoodService.swift in Sources */,
+				EC1CE65927C49CC400EDC066 /* RemoveButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -284,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -309,6 +317,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +346,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

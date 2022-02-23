@@ -11,14 +11,20 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var table: UITableView!
     let foods = FoodService.shared
+    //ここが間違っている、
+//    let boxButton = ListCell().box
+    @IBOutlet weak var removeButton: RemoveButton!
+    
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         table.dataSource = self
         table.delegate = self
-        super.viewDidLoad()
+//        boxButton?.setImage(CheckBoxButton().emptyBox, for: .normal)
         // Do any additional setup after loading the view.
 //        table.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "cell")
 //        foods.getfoods().sort()
+        removeButton.addTarget(self, action: #selector(removeFunc(_:)), for: .touchUpInside)
         
     }
 //viewが表示される直前に呼ばれる、表示系ライフサイクルメソッド
@@ -47,6 +53,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //cellテキスト右側
 //        cell.detailTextLabel?.text = "test"
         cell.RightCellLabel?.text = String(foods.getfoods()[indexPath.row].number)
+        //ボタンを入れる
+//        cell.box = foods.getfoods()[indexPath.row].button
+        //ボタンのアクション
+//        cell.box.addTarget(self, action: #selector(selectBox(_:)), for: .touchUpInside)
+//        if indexPath.row == pushedRow{
+//            cell.box.setImage(CheckBoxButton().checkedBox, for: .normal)
+//        }else{
+//            cell.box.setImage(CheckBoxButton().emptyBox, for: .normal)
+//        }
+        
         return cell
     }
 //セクション表示(空配列ではできない？　fatal error:Index out of range)
@@ -62,6 +78,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         self.table.scrollToRow(at: [0,index], at: .top, animated: true)
         return index
+    }
+    //削除ボタンの機能
+    @objc func removeFunc(_ sender: UIButton){
+        RemoveButton().toggle()
+        table.reloadData()
+        if RemoveButton.isPushed == true{
+            removeButton.setTitle("削除", for: .normal)
+            removeButton.setTitleColor(UIColor.orange, for: .normal)
+            print(RemoveButton.isPushed)
+        }else{
+            removeButton.setImage(removeButton.dustBox, for: .normal)
+            removeButton.setTitleColor(UIColor.gray, for: .normal)
+            print(RemoveButton.isPushed)
+        }
+        print("削除ボタンが押されました")
     }
 }
 
